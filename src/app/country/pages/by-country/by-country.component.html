@@ -21,10 +21,8 @@
     Nothing was found with the search term {{ searchTerm }}
 </div>
 
-<div *ngIf="!existsError" class="row">
-
+<div *ngIf="countries.length > 0" class="row">
     <div class="col">
-
         <table class="table table-hover">
             <thead>
                 <tr>
@@ -34,14 +32,16 @@
                     <th> Population </th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody *ngFor="let country of countries; let i = index">
                 <tr>
-                    <td>1</td>
-                    <td>Flag</td>
-                    <td>Name</td>
-                    <td>123123123123</td>
+                    <td>{{ i+1 }}</td>
                     <td>
-                        <a href="/country/cri">See...</a>
+                        <img class="small-flag" [src]="country.flag" />
+                    </td>
+                    <td>{{ country.name }}</td>
+                    <td>{{ country.population }}</td>
+                    <td>
+                        <a [routerLink]="['/country', country.alpha2Code]">See...</a>
                     </td>
                 </tr>
             </tbody>

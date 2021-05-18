@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "countriesApp"
+    }
+  },
+  "defaultProject": "countriesApp",
+  "cli": {
+    "analytics": "6dbd7052-ca5c-4c9c-9ddd-54c5024e688a"
+  }
 }

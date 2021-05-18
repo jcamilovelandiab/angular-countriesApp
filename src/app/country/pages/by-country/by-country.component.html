@@ -17,11 +17,11 @@
 
 <hr>
 
-<div class="alert alert-danger">
-    Nothing was found with the search term
+<div *ngIf="existsError" class="alert alert-danger">
+    Nothing was found with the search term {{ searchTerm }}
 </div>
 
-<div class="row">
+<div *ngIf="!existsError" class="row">
 
     <div class="col">
 

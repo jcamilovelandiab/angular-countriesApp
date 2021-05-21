@@ -10,20 +10,21 @@ import { Country } from '../../interfaces/country.interface';
 })
 export class ByCountryComponent implements OnInit {
 
-  searchTerm: string = '';
+  countries: Country[] = [];
   existsError: boolean = false;
-  countries: Country[];
+  searchTerm: string = '';
 
   constructor( private countryService: CountryService ) { }
 
   ngOnInit(): void {
   }
 
-  search() {
+  search( searchTerm: string ) {
     this.existsError = false;
+    this.searchTerm = searchTerm;
+    console.log(searchTerm);
     this.countryService.searchCountry(this.searchTerm)
       .subscribe( response => {
-        console.log(response);
         this.countries = response;
       }, error => {
         this.existsError = true;

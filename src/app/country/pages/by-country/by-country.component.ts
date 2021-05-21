@@ -31,7 +31,7 @@ export class ByCountryComponent implements OnInit {
       });
   }
 
-  suggestion( term: string) {
+  suggestion( term: string ) {
     console.log(term);
     this.existsError = false;
   }

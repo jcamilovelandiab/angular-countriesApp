@@ -13,7 +13,7 @@
             <td>
                 <img class="small-flag" [src]="country.flag" />
             </td>
-            <td>{{ country.name }}</td>
+            <td>{{ country.capital }}, {{ country.name }}</td>
             <td>{{ country.population }}</td>
             <td>
                 <a [routerLink]="['/country', country.alpha2Code]">See...</a>

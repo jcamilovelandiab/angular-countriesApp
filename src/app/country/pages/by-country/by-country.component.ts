@@ -22,7 +22,6 @@ export class ByCountryComponent implements OnInit {
   search( searchTerm: string ) {
     this.existsError = false;
     this.searchTerm = searchTerm;
-    console.log(searchTerm);
     this.countryService.searchCountry(this.searchTerm)
       .subscribe( response => {
         this.countries = response;
@@ -30,6 +29,11 @@ export class ByCountryComponent implements OnInit {
         this.existsError = true;
         this.countries = [];
       });
+  }
+
+  suggestion( term: string) {
+    console.log(term);
+    this.existsError = false;
   }
 
 }

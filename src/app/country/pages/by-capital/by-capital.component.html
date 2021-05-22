@@ -1,22 +1,24 @@
-<h2>By Capital</h2>
-<hr>
+<div class="animate__animated animate__fadeIn animate__faster">
+  <h2>By Capital</h2>
+  <hr />
 
-<div class="row">
+  <div class="row">
     <div class="col">
-        <app-country-input
-            (onEnter)="search($event)"
-            placeholder="Search capital..."
-        ></app-country-input>
+      <app-country-input
+        (onEnter)="search($event)"
+        placeholder="Search capital..."
+      ></app-country-input>
     </div>
+  </div>
+  <hr />
 </div>
-<hr>
 
 <div *ngIf="existsError" class="alert alert-danger">
-    Nothing was found with the search term {{ searchTerm }}
+  Nothing was found with the search term {{ searchTerm }}
 </div>
 
 <div *ngIf="countries.length > 0" class="row">
-    <div class="col">
-        <app-country-table [countries]="countries"></app-country-table>
-    </div>
+  <div class="col">
+    <app-country-table [countries]="countries"></app-country-table>
+  </div>
 </div>

@@ -1,16 +1,18 @@
-<h2>By Country</h2>
-<hr>
-
-<div class="row">
-    <div class="col">
-        <app-country-input
-            placeholder="Search country..."
-            (onEnter)="search($event)"
-            (onDebounce)="suggestion($event)"
-        ></app-country-input>
+<div class="animate__animated animate__fadeIn animate__faster">
+    <h2>By Country</h2>
+    <hr>
+    
+    <div class="row">
+        <div class="col">
+            <app-country-input
+                placeholder="Search country..."
+                (onEnter)="search($event)"
+                (onDebounce)="suggestion($event)"
+            ></app-country-input>
+        </div>
     </div>
+    <hr>
 </div>
-<hr>
 
 <div *ngIf="existsError" class="alert alert-danger">
     Nothing was found with the search term {{ searchTerm }}

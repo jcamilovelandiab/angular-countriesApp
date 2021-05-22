@@ -7,8 +7,11 @@
             <th> Population </th>
         </tr>
     </thead>
-    <tbody *ngFor="let country of countries; let i = index">
-        <tr>
+    <tbody>
+        <tr
+            *ngFor="let country of countries; let i = index"
+            class="animate__animated animate__fadeIn animate__faster"
+        >
             <td>{{ i+1 }}</td>
             <td>
                 <img class="small-flag" [src]="country.flag" />
